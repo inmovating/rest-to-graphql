@@ -1,0 +1,23 @@
+{
+  "name": "rest-to-graphql",
+  "version": "1.0.0",
+  "description": "Scripts and workflow to generate Apollo Server from REST api documentation and endpoint.",
+  "main": "index.js",
+  "repository": "https://github.com/inmovating/rest-to-graphql.git",
+  "author": "Inmovating",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "apollo-server-express": "^2.24.1",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
+    "openapi-to-graphql": "^2.3.0",
+    "openapi-types": "^9.0.0",
+    "swagql": "^1.3.9"
+  },
+  "devDependencies": {
+    "@graphql-codegen/typescript": "^1.22.1",
+    "graphql-codegen": "^0.4.0",
+    "typescript": "^4.2.4"
+  }
+}
