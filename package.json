@@ -7,8 +7,13 @@
   "author": "Inmovating",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "genswagger": "api-spec-converter --from=swagger_1 --to=swagger_2 --syntax=json https://www.tokkobroker.com/api/playground/schema > swagger.json"
+  },
   "dependencies": {
+    "api-spec-converter": "^2.12.0",
     "apollo-server-express": "^2.24.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "openapi-to-graphql": "^2.3.0",
@@ -17,6 +22,7 @@
   },
   "devDependencies": {
     "@graphql-codegen/typescript": "^1.22.1",
+    "@openapitools/openapi-generator-cli": "^2.3.3",
     "graphql-codegen": "^0.4.0",
     "typescript": "^4.2.4"
   }

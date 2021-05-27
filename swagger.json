@@ -1,0 +1,872 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "tokkobroker.com",
+    "version": "1.0"
+  },
+  "host": "tokkobroker.com",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/v1/countries/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "countries"
+        ],
+        "description": "Return all of the available countries. Doesn't require Api Key.",
+        "operationId": "country-list",
+        "summary": "List of available countries."
+      }
+    },
+    "/api/v1/country/{id}/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ID of resource",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "countries"
+        ],
+        "description": "Return a country information, including it's states. Doesn't require Api Key.",
+        "operationId": "country-detail",
+        "summary": "Country information"
+      }
+    },
+    "/api/v1/development/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "developments"
+        ],
+        "description": "\nReturn all of the available developments.\nThis developments must've been marked as \"show on web\" on their details.\nRequires Api Key.\n",
+        "operationId": "development-list",
+        "summary": "List of available developments."
+      }
+    },
+    "/api/v1/development/{id}/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ID of resource",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "developments"
+        ],
+        "description": "Returns a property. Require Api Key.",
+        "operationId": "development-detail",
+        "summary": "Development information"
+      }
+    },
+    "/api/v1/development_type/": {
+      "get": {
+        "parameters": [{
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "development_type"
+        ],
+        "description": "Return all of the available development types. Require Api Key.",
+        "operationId": "development-type-list",
+        "summary": "List of available development types."
+      }
+    },
+    "/api/v1/location/quicksearch/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "String to search: Example: 'Barrancas Belgrano', 'Nordelta Portezuelo'",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "locations"
+        ],
+        "description": "Returns a list of locations that match the full_location information. Doesn't require Api Key.",
+        "operationId": "location-quicksearch",
+        "summary": "Location quicksearch"
+      }
+    },
+    "/api/v1/location/{id}/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ID of resource",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "locations"
+        ],
+        "description": "Return a location information, including it's divisions. Doesn't require Api Key.",
+        "operationId": "location-detail",
+        "summary": "Location information"
+      }
+    },
+    "/api/v1/property/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "properties"
+        ],
+        "description": "\nReturn all of the available properties.\nThis properties must've been marked as \"show on web\" on their details.\nRequires Api Key.\n",
+        "operationId": "property-list",
+        "summary": "List of available properties."
+      }
+    },
+    "/api/v1/property/search": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Name of the field to order the results by. Notes: it can also be used the option 'random' which will shuffle the results within the limit+offset combination {Useful for starred items}. Default: price",
+            "in": "query",
+            "name": "order_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Sets the way the order_by option is used. Default: ASC",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "\n<BR> Examples:\n<BR>\n<BR> Searching for all properties in Argentina (Country=1), which are available for all operations, and the prices are between USD 0 and USD 4.500.000. Also it must have more than 2 bathrooms, Expenses be lower than 400, must have Jacuzzi (34), Solarium (40) and must not be work able (47).\n<BR><BR>{\"current_localization_id\":1, \"current_localization_type\": \"country\",\"price_from\":0,\"price_to\":4500000,\"operation_types\":[1,2,3],\"property_types\":[1,2,3,4,5,6,7], \"currency\":\"USD\",\"filters\":[[\"expenses\", \"<\", \"400\"], [\"bathroom_amount\", \">\", \"2\"]],\"with_tags\":[34, 40],\"without_tags\":[47]}\n<BR><BR>\nSame search, but instead of looking in Argentina, we just focus in Palermo (Capital federal) And Belgrano (Capital Federal)\n<BR><BR>{\"current_localization_id\":[24728, 24682], \"current_localization_type\": \"division\",\"price_from\":0,\"price_to\":4500000,\"operation_types\":[1,2,3],\"property_types\":[1,2,3,4,5,6,7], \"currency\":\"USD\",\"filters\":[[\"expenses\", \"<\", \"400\"], [\"bathroom_amount\", \">\", \"2\"]],\"with_tags\":[34, 40],\"without_tags\":[47]}\n",
+            "in": "query",
+            "name": "data",
+            "required": true,
+            "type": "search_data"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "properties"
+        ],
+        "description": "\nReturn all of the available properties that fit the search parameters.\nThis properties must've been marked as \"show on web\" on their details.\nRequires Api Key.\n",
+        "operationId": "property-list-search",
+        "summary": "Search of available properties."
+      }
+    },
+    "/api/v1/property/{id}/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ID of resource",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "properties"
+        ],
+        "description": "Returns a property. Require Api Key.",
+        "operationId": "property-detail",
+        "summary": "Property information"
+      }
+    },
+    "/api/v1/property_custom_tag/": {
+      "get": {
+        "parameters": [{
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "property_custom_tags"
+        ],
+        "description": "Return all of the available property custom tags. Require Api Key.",
+        "operationId": "property-tag-list",
+        "summary": "List of available property custom tags."
+      }
+    },
+    "/api/v1/property_tag/": {
+      "get": {
+        "parameters": [{
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "property_tags"
+        ],
+        "description": "Return all of the available property tags. Require Api Key.<BR>Property Tags Types: 1: Services 2: Room types 3: Additionals",
+        "operationId": "property-tag-list",
+        "summary": "List of available property tags."
+      }
+    },
+    "/api/v1/property_type/": {
+      "get": {
+        "parameters": [{
+            "description": "Number of results to show. Default: 20",
+            "format": "int32",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Number of result item to start showing. Useful for pagination purposes {Combined with 'limit' parameter}. Default: 0",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "items": {},
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "property_type"
+        ],
+        "description": "Return all of the available property types. Require Api Key.",
+        "operationId": "property-type-list",
+        "summary": "List of available property types."
+      }
+    },
+    "/api/v1/state/{id}/": {
+      "get": {
+        "parameters": [{
+            "description": "Language of the results, defaults to 'en'",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Format of the results, defaults to 'json'",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "ID of resource",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "states"
+        ],
+        "description": "Return a state information, including it's divisions. Doesn't require Api Key.",
+        "operationId": "state-detail",
+        "summary": "State information"
+      }
+    },
+    "/api/v1/webcontact/": {
+      "post": {
+        "parameters": [{
+            "description": "Name of the contact",
+            "in": "body",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Cellphone of the contact",
+            "in": "body",
+            "name": "cellphone",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Phone of the contact",
+            "in": "body",
+            "name": "phone",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "E-mail of the contact",
+            "in": "body",
+            "name": "email",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Name of the bussiness of the contact",
+            "in": "body",
+            "name": "work_name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "text of the form",
+            "in": "body",
+            "name": "text",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "List of properties (ids)related to this contact form. ie: '[1,2,546]'",
+            "in": "body",
+            "name": "properties",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "List of tags (strings)related to this contact form. ie: '['AdSense','Inversor']'",
+            "in": "body",
+            "name": "tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "$ref": "#/definitions/None"
+            }
+          }
+        },
+        "tags": [
+          "web_contact"
+        ],
+        "description": "Posts a contact form into Tokko Broker. Require Api Key.<BR>This form is illustrative, body of the request must be a JSON object containing the following parameters<BR> Notes: At least 1 contact information field must be filled (phone, email or cellphone)",
+        "operationId": "web-contact",
+        "summary": "Posts webcontact into tokko broker"
+      }
+    }
+  },
+  "definitions": {
+    "search_data": {
+      "properties": {
+        "currency": {
+          "description": "Currency filter, Values: USD or ARS",
+          "type": "string"
+        },
+        "current_localization_id": {
+          "description": "List of locations {Matching 'current_localization_type' criteria.} In case of current_localization_type == 'country', this value must be only the id of the country and not a list.",
+          "items": {},
+          "type": "array"
+        },
+        "current_localization_type": {
+          "description": "Type of localization filter to apply. Values: 'country', 'state', 'division'",
+          "type": "string"
+        },
+        "filter": {
+          "description": "List of advanced filters. Filter definition: ['<field_name>', '<operator>', '<value>'] for numeric fields, using '>', '<', '=' operators or ['<field_name>', '<value>', ''] for booleans.",
+          "items": {},
+          "type": "array"
+        },
+        "operation_types": {
+          "description": "List of operations types to filter. Values 1: Sale, 2: Rent, 3: Temporary_rent",
+          "items": {},
+          "type": "array"
+        },
+        "price_from": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "price_to": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "property_types": {
+          "description": "List of property types to filter. Values 1: Land, 2: Appartment, 3: House, 4: Weekend house, 5: Office, 6: Mooring, 7: Bussiness premises, 8:Commercial Building",
+          "items": {},
+          "type": "array"
+        },
+        "with_custom_tags": {
+          "description": "List of custom tags that the property must contain. Check the Tags Api to check available custom tags.",
+          "items": {},
+          "type": "array"
+        },
+        "with_tags": {
+          "description": "List of tags that the property must contain. Check the Tags Api to check available tags.",
+          "items": {},
+          "type": "array"
+        },
+        "without_custom_tags": {
+          "description": "List of custom tags that the property must not contain. Check the Tags Api to check available custom tags.",
+          "items": {},
+          "type": "array"
+        },
+        "without_tags": {
+          "description": "List of tags that the property must not contain. Check the Tags Api to check available tags.",
+          "items": {},
+          "type": "array"
+        }
+      },
+      "required": [
+        "currency",
+        "current_localization_id",
+        "current_localization_type",
+        "filter",
+        "operation_types",
+        "price_from",
+        "price_to",
+        "property_types",
+        "with_custom_tags",
+        "with_tags",
+        "without_custom_tags",
+        "without_tags"
+      ]
+    }
+  },
+  "tags": [{
+      "description": "Countries listing.",
+      "name": "countries"
+    },
+    {
+      "description": "Development types listing.",
+      "name": "development_type"
+    },
+    {
+      "description": "Developments listing.",
+      "name": "developments"
+    },
+    {
+      "description": "Locations listing.",
+      "name": "locations"
+    },
+    {
+      "description": "Properties listing.",
+      "name": "properties"
+    },
+    {
+      "description": "Property custom tags listing.",
+      "name": "property_custom_tags"
+    },
+    {
+      "description": "Property tags listing.",
+      "name": "property_tags"
+    },
+    {
+      "description": "Property types listing.",
+      "name": "property_type"
+    },
+    {
+      "description": "States listing.",
+      "name": "states"
+    },
+    {
+      "description": "Property types listing.",
+      "name": "web_contact"
+    }
+  ]
+}
